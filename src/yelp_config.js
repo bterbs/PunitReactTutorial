@@ -1,2 +1,0 @@
-export const CLIENT_ID = 'PqED0c8fM6b3P7YxWzq3mg'
-export const API_KEY = 'mD19PnROED3DShhaiqL2zBfCP3KCEXuiNG8tjA3tMYCz_wg8j6mQyEwQ1Jbw4wafgdsXyNJ99J3UWhh9f_s-NMbI24dgOsu9C-E51hGw2JINPkgCk_doduKbtK2VWnYx'

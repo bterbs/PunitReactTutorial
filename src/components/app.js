@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Restaurant from './restaurant'
 import RestaurantSelectButtons from './restaurant_select_buttons'
+import YelpApi from '../yelp_api'
 
 export default class App extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ Specs:
 - once I select a restaurant I should see the details of the restaurant
 - as a user, I should no see a restaurant more than once
 
-App's state - you should be able to look at state and see that each spec can be met 
+App's state - you should be able to look at state and see that each spec can be met
 {
   restaurantSeenIds: [abc, def, ghi....]
   CurrentRestaurant: {}
