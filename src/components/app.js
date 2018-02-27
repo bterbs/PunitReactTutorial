@@ -6,7 +6,7 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      
+
     }
   }
 
@@ -19,3 +19,19 @@ export default class App extends Component {
     );
   }
 }
+
+/*
+Specs:
+- as a user I should be able to select a restaurant
+- once I select a restaurant I should see the details of the restaurant
+- as a user, I should no see a restaurant more than once
+
+App's state - you should be able to look at state and see that each spec can be met 
+{
+  restaurantSeenIds: [abc, def, ghi....]
+  CurrentRestaurant: {}
+  RestToBeSeen: []
+  RestaurantSelected: {}
+
+}
+ */
