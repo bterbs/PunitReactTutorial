@@ -9,7 +9,7 @@ function makeQuery(obj) {
   for(key in obj) {
     result += `${key}=${obj[key]}&`
   }
-  return result
+  return result.slice(0,1)
 }
 
 function search(options) {
