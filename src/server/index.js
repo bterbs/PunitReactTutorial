@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const YelpApi = require('./yelp_api')
 
 app.use(express.static('public'))
 
