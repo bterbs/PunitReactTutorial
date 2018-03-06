@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Restaurant from './restaurant'
 import RestaurantSelectButtons from './restaurant_select_buttons'
-import YelpApi from '../reducers/yelp_api'
 
 export default class App extends Component {
   constructor(props) {
