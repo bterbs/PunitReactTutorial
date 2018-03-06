@@ -12,19 +12,22 @@ function makeQuery(obj) {
   return result
 }
 
-makeQuery({term: 'Restaurants', location:'San Francisco', latitude:'21343'})
+function search(options) {
+  let queryString = makeQuery(options)
+  return axios.get('https://api.yelp.com/v3/businesses/search?term=Restaurants&location=Oakland',
+  {headers: {'Authorization': `Bearer ${API_KEY}`}})
+  .then(result => {
+    return { data: result.data.businesses.length }
+  })
+  .catch( err => {
+    console.error(err)
+    return { error: true, message: err.message }
+  })
+}
+
 
 module.exports = {
-  search: (options) => {
-    axios.get('https://api.yelp.com/v3/businesses/search?term=Restaurants&location=Oakland',
-    {headers: {'Authorization': `Bearer ${API_KEY}`}})
-    .then(result => {
-      console.log('results.data', result.data.businesses.length);
-    })
-    .catch( err => {
-      console.error(err)
-    })
-  }
+  search: search
 }
 
   /*
