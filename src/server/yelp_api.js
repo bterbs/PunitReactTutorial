@@ -4,11 +4,28 @@ const API_KEY = 'mD19PnROED3DShhaiqL2zBfCP3KCEXuiNG8tjA3tMYCz_wg8j6mQyEwQ1Jbw4wa
 
 console.log('Going to make api call to Yelp');
 
-axios.get('https://api.yelp.com/v3/businesses/search?term=Restaurants&location=Oakland',
+function makeQuery(obj) {
+  var result = '?'
+  for(key in obj) {
+    result += `${key}=${obj[key]}&`
+  }
+  return result
+}
+
+makeQuery({term: 'Restaurants', location:'San Francisco', latitude:'21343'})
+
+module.exports = {
+  search: (options) => {
+    axios.get('https://api.yelp.com/v3/businesses/search?term=Restaurants&location=Oakland',
     {headers: {'Authorization': `Bearer ${API_KEY}`}})
-  .then(result => {
-    console.log('results.data', result.data);
-  })
+    .then(result => {
+      console.log('results.data', result.data.businesses.length);
+    })
+    .catch( err => {
+      console.error(err)
+    })
+  }
+}
 
   /*
 - Above we are initializing a yelp instance, using an instance of Yelp that has a method called search.
